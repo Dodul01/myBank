@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank -LogIn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950">
+  <nav class="max-w-[1024px] w-full mx-auto">
+    <h3 class="text-blue-700 text-2xl my-3 font-semibold">MyBank</h3>
+  </nav>
+  <main class="max-w-[1024px] w-full mx-auto">
+    <div class="bg-slate-900 p-7 rounded-lg w-9/12 mx-auto mt-16">
+      <input class="block p-2 my-3 rounded outline-none w-full" id="user-email" type="email" placeholder="example@gmail.com"/>
+      <input class="block p-2 my-3 rounded outline-none w-full mb-4" id="user-password" type="password" placeholder="Your Password"/>
+      <button class="bg-blue-700 text-white px-4 py-1 rounded-md" id="logIn-Btn">Log In</button>
+    </div>
+  </main>
+  <script>
+    // email :test@gmail.com
+    // password :test1234
+    const logInBtn = document.getElementById('logIn-Btn');
+
+    const handleLogin = ()=>{
+      const userEmail = document.getElementById('user-email').value;
+      const userPassword = document.getElementById('user-password').value;
+
+      const accountEmail = 'test@gmail.com';
+      const accountPassword = 'test1234';
+
+      if(userEmail === ''){
+        alert('Email Can not be empty.');
+      }else if(userPassword === ''){
+        alert('Password Can not be empty');
+      }else if(userEmail !== accountEmail){
+        alert('Wrong email accout.')
+      }else if(userPassword !== accountPassword){
+        alert('Wrong Password.')
+      }else if(userEmail == accountEmail && userPassword == accountPassword){
+        window.location = 'home.html';
+      }else{
+        alert('Worng password try again.');
+      }
+
+    }
+
+    logInBtn.addEventListener('click', handleLogin);
+  </script>
+</body>
+</html>
