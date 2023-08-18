@@ -2,6 +2,7 @@ const getInputValue = (inputElement)=>{
   const inputFild = document.getElementById(inputElement);
   const inputString = inputFild.value;
   const inputValue = parseInt(inputString);
+  
   inputFild.value = ''
 
   return inputValue;

@@ -6,6 +6,10 @@ depositBtn.addEventListener('click', ()=> {
   const depositSum = prevDepositAmmount + depositAmmount;
   const prevBalance = getPrevAmmount('balance');
 
+  if(isNaN(depositAmmount)){
+    return alert('Input value should be number.')
+  }
+
   setAmmount(depositSum, 'deposit')
   const newBalance = prevBalance + depositAmmount;
   

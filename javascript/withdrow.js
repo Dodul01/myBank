@@ -1,11 +1,17 @@
 const withdrowBtn = document.getElementById('withdrowBtn');
 
 withdrowBtn.addEventListener('click', ()=> {
-  const withdrowValue = getInputValue('withdrowInputValue');
+  const withdrowAmmount = getInputValue('withdrowInputValue');
   const prevWithdrowAmmount = getPrevAmmount('withdrow');
-  const withdrowSum = prevWithdrowAmmount + withdrowValue; 
+  const withdrowSum = prevWithdrowAmmount + withdrowAmmount; 
   const prevBalance = getPrevAmmount('balance');
-  const newBalance = prevBalance - withdrowValue;
+
+  const newBalance = prevBalance - withdrowAmmount;
+
+  if(isNaN(withdrowAmmount)){
+    return alert('Input value should be number.')
+  }
+
   setAmmount(withdrowSum ,'withdrow');
   setAmmount(newBalance, 'balance');
 });
